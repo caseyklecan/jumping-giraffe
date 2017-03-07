@@ -13,6 +13,8 @@ public class GiraffeController : MonoBehaviour {
 	public float bounceForce = 4f;
 	public float jumpForce = 6f;
 
+	public AudioClip bounceSound;
+
 
 	private bool onGround =  false;
 	private Vector3 moveDirection = Vector3.zero;
@@ -45,10 +47,24 @@ public class GiraffeController : MonoBehaviour {
 
 
 		if (onGround) { 
-//			if (Input.GetKeyDown ("space"))
-//				JumpByForce ();
-//			else
+			if (Input.GetKeyDown ("space")) {
+				JumpByForce ();
+			} else if (Input.touchCount > 0) {
+				for (int i = 0; i < Input.touchCount; i++) { 
+					if (Input.GetTouch (i).phase == TouchPhase.Moved) { 
+						// swipe
+					} else if (Input.GetTouch(i).phase == TouchPhase.Began) { 
+						JumpByForce ();
+					}
+				}
+			} else {
 				JumpByImpulse ();
+			}
+
+			AudioSource src = GetComponent<AudioSource> ();
+			src.PlayOneShot (bounceSound);
+
+
 		}
 
 
