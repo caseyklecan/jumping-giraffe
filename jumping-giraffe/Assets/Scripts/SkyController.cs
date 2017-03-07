@@ -2,17 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraController : MonoBehaviour {
+public class SkyController : MonoBehaviour {
 
-	private Transform giraffe;
+	private Transform camera;
 
 	void Start () {
-		giraffe = GameObject.Find ("Giraffe").transform;
+		camera = Camera.main.transform;
 	}
-	
-	// updates the position of the camera to follow the giraffe
+
+	// updates the position of the sky background to follow the camera
 	void Update () {
-		Vector3 newPos = giraffe.position;
+		Vector3 newPos = camera.position;
 		newPos.y = transform.position.y;
 		newPos.z = transform.position.z;
 		transform.position = newPos;
