@@ -4,11 +4,6 @@ using UnityEngine;
 
 public class GiraffeController : MonoBehaviour {
 
-	public float moveSpeed = 8.0f;
-	public float turnSpeed;
-	public float jumpHeight;
-	public float gravity;
-
 	public float transformDist = 3f;
 	public float bounceForce = 4f;
 	public float jumpForce = 6f;
@@ -17,7 +12,6 @@ public class GiraffeController : MonoBehaviour {
 
 
 	private bool onGround =  false;
-	private Vector3 moveDirection = Vector3.zero;
 
 
 	// Use this for initialization
@@ -32,24 +26,11 @@ public class GiraffeController : MonoBehaviour {
 		transform.position = Vector3.Lerp (transform.position, newPos, Time.deltaTime);
 
 
-		if (Input.GetKeyDown("space")) 
-			{
-			Debug.Log("Space key pressed.");
-			moveDirection.y = moveSpeed; 
-			float targetAngle = Mathf.Atan2(moveDirection.y, moveDirection.x) * Mathf.Rad2Deg;
-			transform.rotation = 
-				Quaternion.Slerp( transform.rotation, 
-					Quaternion.Euler( 0, 0, targetAngle ), 
-					turnSpeed * Time.deltaTime );
-			}
-		moveDirection.y -= gravity * Time.deltaTime;
-
-
-
 		if (onGround) { 
 			if (Input.GetKeyDown ("space")) {
 				JumpByForce ();
-			} else if (Input.touchCount > 0) {
+			}
+            else if (Input.touchCount > 0) {
 				for (int i = 0; i < Input.touchCount; i++) { 
 					if (Input.GetTouch (i).phase == TouchPhase.Moved) { 
 						// swipe
