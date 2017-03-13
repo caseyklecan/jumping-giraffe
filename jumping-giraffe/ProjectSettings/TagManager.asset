@@ -16,7 +16,7 @@ TagManager:
   - 
   - Ground
   - Giraffe
-  - 
+  - Power Up
   - 
   - 
   - 
@@ -47,6 +47,9 @@ TagManager:
     locked: 0
   - name: Ground
     uniqueID: 14607251
+    locked: 0
+  - name: Power Up
+    uniqueID: 1472417593
     locked: 0
   - name: Giraffe
     uniqueID: 2297171551
