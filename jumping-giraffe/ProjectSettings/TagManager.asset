@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Giraffe
+  - Invincibility
+  - Speed
   layers:
   - Default
   - TransparentFX
@@ -14,10 +16,10 @@ TagManager:
   - UI
   - 
   - 
+  - Background
   - Ground
-  - Giraffe
   - Power Up
-  - 
+  - Giraffe
   - 
   - 
   - 
