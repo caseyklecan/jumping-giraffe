@@ -453,6 +453,10 @@ PlayerSettings:
   XboxOnePersistentLocalStorageSize: 0
   vrEditorSettings: {}
   cloudServicesEnabled:
+    Build: 0
+    Collab: 0
+    ErrorHub: 0
+    Hub: 0
     UNet: 1
   cloudProjectId: 88ef56d8-13ca-4cce-9bd4-299f1d393a0e
   projectName: jumping-giraffe
