@@ -61,6 +61,9 @@ public class GiraffeController : MonoBehaviour {
         if (other.CompareTag("Speed"))
         {
             GetComponent<AudioSource>().PlayOneShot(powerUpSound);
+            // this is working but it still needs to be fixed...
+            // it works weirdly when you hit a speed power up then hit another one before you're done
+            // speeding up from the other one
             transformDist = 4f;
             Invoke("ReturnTransformDist", 4f);
             

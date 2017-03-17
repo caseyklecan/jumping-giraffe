@@ -7,6 +7,7 @@ public class HillController : MonoBehaviour {
     private Transform cameraTransform;
     private float spriteWidth;
     private SpriteRenderer spriteRenderer;
+    public Collider2D coll;
 
     // Use this for initialization
     void Start()
@@ -25,5 +26,10 @@ public class HillController : MonoBehaviour {
             newPos.x += spriteWidth * 3.0f;
             transform.position = newPos;
         }
+    }
+
+    void OnCollisionEnter2D(Collision2D c)
+    {
+
     }
 }
