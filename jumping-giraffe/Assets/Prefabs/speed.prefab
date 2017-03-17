@@ -88,7 +88,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f252bfd01150a964fb447b70907a6bc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minCreationTime: 1
+  minCreationTime: 10
   maxCreationTime: 20
   speedPrefab: {fileID: 1976482463471534}
 --- !u!212 &212346646358441286

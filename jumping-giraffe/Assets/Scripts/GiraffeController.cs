@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GiraffeController : MonoBehaviour {
 
-	public float transformDist = 3f;
+	public float transformDist = 1f;
 	public float bounceForce = 4f;
 	public float jumpForce = 6f;
 
@@ -58,10 +58,22 @@ public class GiraffeController : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Speed") || other.CompareTag("Invincibility"))
+        if (other.CompareTag("Speed"))
+        {
+            GetComponent<AudioSource>().PlayOneShot(powerUpSound);
+            transformDist = 4f;
+            Invoke("ReturnTransformDist", 4f);
+            
+        }
+        else if (other.CompareTag("Invincibility"))
         {
             GetComponent<AudioSource>().PlayOneShot(powerUpSound);
         }
+    }
+
+    void ReturnTransformDist()
+    {
+        transformDist = 1f;
     }
 
 	// the jump that occurs when the user does not hit space
