@@ -9,6 +9,7 @@ public class GiraffeController : MonoBehaviour {
 	public float jumpForce = 6f;
 
 	public AudioClip bounceSound;
+    public AudioClip powerUpSound;
 
 
 	private bool onGround =  false;
@@ -55,6 +56,14 @@ public class GiraffeController : MonoBehaviour {
 		onGround = true;
 	}
 
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Speed") || other.CompareTag("Invincibility"))
+        {
+            GetComponent<AudioSource>().PlayOneShot(powerUpSound);
+        }
+    }
+
 	// the jump that occurs when the user does not hit space
 	void JumpByImpulse() { 
 		Rigidbody2D rb = GetComponent<Rigidbody2D> ();
@@ -68,4 +77,5 @@ public class GiraffeController : MonoBehaviour {
 		rb.AddForce (jumpForce * Vector2.up, ForceMode2D.Impulse);
 		onGround = false;
 	}
+
 }

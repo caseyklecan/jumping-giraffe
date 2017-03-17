@@ -6,7 +6,6 @@ public class SpeedController : MonoBehaviour {
     public float minCreationTime = 15f;
     public float maxCreationTime = 200f;
     public GameObject speedPrefab;
-    public AudioClip powerUpSound;
 
 	// Use this for initialization
 	void Start () {
@@ -22,8 +21,6 @@ public class SpeedController : MonoBehaviour {
     {
         if (other.CompareTag("Giraffe"))
         {
-            AudioSource src = GetComponent<AudioSource>();
-            src.PlayOneShot(powerUpSound);
             Destroy(gameObject);
         }
     }
