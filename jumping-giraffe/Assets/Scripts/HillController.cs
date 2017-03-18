@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class HillController : MonoBehaviour {
 
@@ -30,6 +31,29 @@ public class HillController : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D c)
     {
+        if (c.gameObject.tag == "Giraffe")
+        {
+            coll = GetComponent<Collider2D>();
+            if (coll.GetType() == typeof(BoxCollider2D)) {
+                Debug.Log(coll.GetType());
+            }
+            else if (coll.GetType() == typeof(EdgeCollider2D))
+            {
+                //SceneManager.LoadScene("loseScene");
+                Debug.Log(coll.GetType());
+            }
+            else
+            {
+                Debug.Log(coll.GetType());
+            }
+        }
+    }
 
+    void OnTriggerEnter2D(Collider2D c)
+    {
+        if (c.gameObject.tag == "Giraffe")
+        {
+            Debug.Log("hit the box collider");
+        }
     }
 }

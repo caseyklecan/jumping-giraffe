@@ -130,46 +130,13 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 4015213359360776, guid: 0304d7834e3694369945a22a586d5eb6, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4015213359360776, guid: 0304d7834e3694369945a22a586d5eb6, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 1.3307331
-      objectReference: {fileID: 0}
     - target: {fileID: 1724376224837368, guid: 0304d7834e3694369945a22a586d5eb6, type: 2}
       propertyPath: m_Name
       value: Hills (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 1724376224837368, guid: 0304d7834e3694369945a22a586d5eb6, type: 2}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 1724376224837368, guid: 0304d7834e3694369945a22a586d5eb6, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0304d7834e3694369945a22a586d5eb6, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &34391152 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1724376224837368, guid: 0304d7834e3694369945a22a586d5eb6,
-    type: 2}
-  m_PrefabInternal: {fileID: 34391151}
---- !u!114 &34391153
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 34391152}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb0ebe845a38b2a45bc4a8e4388cac7e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  coll: {fileID: 0}
 --- !u!1001 &171627689
 Prefab:
   m_ObjectHideFlags: 0
@@ -209,46 +176,13 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 4015213359360776, guid: 0304d7834e3694369945a22a586d5eb6, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4015213359360776, guid: 0304d7834e3694369945a22a586d5eb6, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 1.3307331
-      objectReference: {fileID: 0}
     - target: {fileID: 1724376224837368, guid: 0304d7834e3694369945a22a586d5eb6, type: 2}
       propertyPath: m_Name
       value: Hills (2)
       objectReference: {fileID: 0}
-    - target: {fileID: 1724376224837368, guid: 0304d7834e3694369945a22a586d5eb6, type: 2}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 1724376224837368, guid: 0304d7834e3694369945a22a586d5eb6, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0304d7834e3694369945a22a586d5eb6, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &171627690 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1724376224837368, guid: 0304d7834e3694369945a22a586d5eb6,
-    type: 2}
-  m_PrefabInternal: {fileID: 171627689}
---- !u!114 &171627691
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 171627690}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb0ebe845a38b2a45bc4a8e4388cac7e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  coll: {fileID: 0}
 --- !u!1001 &258059961
 Prefab:
   m_ObjectHideFlags: 0
@@ -288,6 +222,31 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 61262450214703778, guid: 0304d7834e3694369945a22a586d5eb6,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 61766275505925784, guid: 0304d7834e3694369945a22a586d5eb6,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 61929067060925424, guid: 0304d7834e3694369945a22a586d5eb6,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 61550715852839584, guid: 0304d7834e3694369945a22a586d5eb6,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 61964828390508418, guid: 0304d7834e3694369945a22a586d5eb6,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0304d7834e3694369945a22a586d5eb6, type: 2}
   m_IsPrefabParent: 0
@@ -304,6 +263,7 @@ GameObject:
   - component: {fileID: 1439342748}
   - component: {fileID: 1439342749}
   - component: {fileID: 1439342750}
+  - component: {fileID: 1439342751}
   m_Layer: 0
   m_Name: Giraffe
   m_TagString: Giraffe
@@ -353,7 +313,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1439342744}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1, y: 3, z: 0}
+  m_LocalPosition: {x: -1.08, y: 2.92, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -489,6 +449,23 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!95 &1439342751
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1439342744}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 630f41e9ddc0c244584b2eb573a91e79, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1001 &1480052804
 Prefab:
   m_ObjectHideFlags: 0
@@ -531,7 +508,7 @@ Prefab:
     - target: {fileID: 114772304648756070, guid: ecba9bb3c70fbe043adcf391d4aaf639,
         type: 2}
       propertyPath: minCreationTime
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 114772304648756070, guid: ecba9bb3c70fbe043adcf391d4aaf639,
         type: 2}
