@@ -35,6 +35,8 @@ public class GiraffeController : MonoBehaviour {
 				for (int i = 0; i < Input.touchCount; i++) { 
 					if (Input.GetTouch (i).phase == TouchPhase.Moved) { 
 						// swipe
+                        // i used swipe for the giraffe flip
+                        // lmk if you want me to use something else and we can change it
 					} else if (Input.GetTouch(i).phase == TouchPhase.Began) { 
 						JumpByForce ();
 					}
@@ -53,7 +55,17 @@ public class GiraffeController : MonoBehaviour {
         {
             if (Input.GetKeyDown("space"))
             {
-                GetComponent<Animator>().Play("GiraffeFlip");
+                GetComponent<Animator>().SetTrigger("FlipTrigger");
+            }
+            else if (Input.touchCount > 0)
+            {
+                for (int i = 0; i < Input.touchCount; i++)
+                {
+                    if (Input.GetTouch(i).phase == TouchPhase.Moved)
+                    {
+                        GetComponent<Animator>().SetTrigger("FlipTrigger");
+                    }
+                }
             }
         }
 
@@ -69,9 +81,6 @@ public class GiraffeController : MonoBehaviour {
         if (other.CompareTag("Speed"))
         {
             GetComponent<AudioSource>().PlayOneShot(powerUpSound);
-            // this is working but it still needs to be fixed...
-            // it works weirdly when you hit a speed power up then hit another one before you're done
-            // speeding up from the other one
             transformDist = 4f;
             Invoke("ReturnTransformDist", 4f);
             
