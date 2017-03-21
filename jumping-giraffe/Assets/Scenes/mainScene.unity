@@ -330,8 +330,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transformDist: 1.5
-  bounceForce: 4
   jumpForce: 6
+  yDist: 0
   bounceSound: {fileID: 8300000, guid: 43862f4787d4644f7a717d7041ffce76, type: 3}
   powerUpSound: {fileID: 8300000, guid: 743847b0d66c65b4ca82d8718d243520, type: 3}
 --- !u!50 &1439342748
@@ -455,7 +455,7 @@ Animator:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1439342744}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 630f41e9ddc0c244584b2eb573a91e79, type: 2}
   m_CullingMode: 0
@@ -734,3 +734,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac41d3f77725d4fb2b9b0e7ba53b6558, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gf: {fileID: 1439342747}

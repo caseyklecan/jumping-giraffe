@@ -7,7 +7,6 @@ using System;
 public class GiraffeController : MonoBehaviour {
 
 	public float transformDist = 1.5f;
-	public float bounceForce = 4f;
 	public float jumpForce = 6f;
 	public float yDist = 0f;
 
@@ -27,47 +26,21 @@ public class GiraffeController : MonoBehaviour {
 		// how the giraffe moves
 		Vector3 newPos = new Vector3 (transform.position.x + transformDist, transform.position.y + yDist, transform.position.z);
 		transform.position = Vector3.Lerp (transform.position, newPos, Time.deltaTime);
-
-//
-//		if (onGround) { 
-//			if (Input.GetKeyDown ("space")) {
-//				JumpByForce ();
-//			}
-//            else if (Input.touchCount > 0) {
-//				for (int i = 0; i < Input.touchCount; i++) { 
-//					if (Input.GetTouch (i).phase == TouchPhase.Moved) { 
-//						// swipe
-//                        // i used swipe for the giraffe flip
-//                        // lmk if you want me to use something else and we can change it
-//					} else if (Input.GetTouch(i).phase == TouchPhase.Began) { 
-//						JumpByForce ();
-//					}
-//				}
-//			} else {
-//				JumpByImpulse ();
-//			}
-
-
-
-//		}
-
-//        if (!onGround)
-//        {
-//            if (Input.GetKeyDown("space"))
-//            {
-//                GetComponent<Animator>().SetTrigger("FlipTrigger");
-//            }
-//            else if (Input.touchCount > 0)
-//            {
-//                for (int i = 0; i < Input.touchCount; i++)
-//                {
-//                    if (Input.GetTouch(i).phase == TouchPhase.Moved)
-//                    {
-//                        GetComponent<Animator>().SetTrigger("FlipTrigger");
-//                    }
-//                }
-//            }
-//        }
+	
+        if (Input.GetKeyDown("space"))
+        {
+			Flip ();
+        }
+        else if (Input.touchCount > 0)
+        {
+          for (int i = 0; i < Input.touchCount; i++)
+          {
+             if (Input.GetTouch(i).phase == TouchPhase.Moved)
+             {
+				Flip ();
+             }
+          }
+        }
 
 
 	}
@@ -78,6 +51,7 @@ public class GiraffeController : MonoBehaviour {
 			JumpByForce ();
 		} else { 
 			FlyOff ();
+//			Invoke("Lose", 1.5f);
 		}
 	}
 
@@ -107,20 +81,40 @@ public class GiraffeController : MonoBehaviour {
 		src.PlayOneShot (bounceSound);
 	}
 
+	void Flip() { 
+		Animator a = GetComponent<Animator> ();
+		a.SetBool ("Flipping", true);
+		transformDist = 3f;
+		Invoke ("StopFlip", 1.5f);
+	}
+
+	void StopFlip() { 
+		Animator a = GetComponent<Animator> ();
+		a.SetBool ("Flipping", false);
+		transformDist = 1.5f;
+	}
+
 	void MakeInvincible() { 
 		invincible = true;
-		// animation for colors
+		Animator a = GetComponent<Animator>();
+		a.SetBool ("Invincible", true);
 		Invoke("TurnOffInvincibility", 3f);
 	}
 
 	void TurnOffInvincibility() { 
 		invincible = false;
+		Animator a = GetComponent<Animator>();
+		a.SetBool ("Invincible", false);
 	}
 
 	void FlyOff() { 
 		if (!invincible) {
-			transformDist = 4f;
-			yDist = 3f;
+			// want to make this smoother
+			Animator a = GetComponent<Animator>();
+			a.SetBool ("Dead", true);
+			Rigidbody2D rb = GetComponent<Rigidbody2D> ();
+			rb.AddForce (1.15f * jumpForce * Vector2.up, ForceMode2D.Impulse);
+
 			Invoke ("Lose", 2f);
 		} else { 
 			JumpByForce ();
@@ -129,6 +123,18 @@ public class GiraffeController : MonoBehaviour {
 
 	void Lose() { 
 		SceneManager.LoadScene ("loseScene");
+	}
+
+	public void Win() { 
+		Animator a = GetComponent<Animator>();
+		a.SetBool ("Win", true);
+		Rigidbody2D rb = GetComponent<Rigidbody2D> ();
+		rb.AddForce (1.15f * jumpForce * Vector2.up, ForceMode2D.Impulse);
+		Invoke ("WinScene", 2f);
+	}
+
+	void WinScene() { 
+		SceneManager.LoadScene ("winScene");
 	}
 
 }
