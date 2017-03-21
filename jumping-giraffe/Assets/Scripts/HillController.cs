@@ -21,10 +21,11 @@ public class HillController : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if ((transform.position.x + spriteWidth) < (cameraTransform.position.x - 0.5 * spriteWidth))
+        if ((transform.position.x + spriteWidth) < (cameraTransform.position.x - 0.75 * spriteWidth))
         {
             Vector3 newPos = transform.position;
-            newPos.x += spriteWidth * 3.0f;
+            newPos.x += spriteWidth * 4.0f;
+			newPos.y = 0.75f;
             transform.position = newPos;
         }
     }
@@ -34,13 +35,11 @@ public class HillController : MonoBehaviour {
         if (c.gameObject.tag == "Giraffe")
         {
             coll = GetComponent<Collider2D>();
-            if (coll.GetType() == typeof(BoxCollider2D)) {
-                Debug.Log(coll.GetType());
-            }
-            else if (coll.GetType() == typeof(EdgeCollider2D))
+           if (coll.GetType() == typeof(EdgeCollider2D))
             {
                 //SceneManager.LoadScene("loseScene");
-                Debug.Log(coll.GetType());
+//                Debug.Log(coll.GetType());
+				Debug.Log("Giraffe hit edge");
             }
             else
             {
@@ -49,11 +48,11 @@ public class HillController : MonoBehaviour {
         }
     }
 
-    void OnTriggerEnter2D(Collider2D c)
-    {
-        if (c.gameObject.tag == "Giraffe")
-        {
-            Debug.Log("hit the box collider");
-        }
-    }
+//    void OnTriggerEnter2D(Collider2D c)
+//    {
+//        if (c.gameObject.tag == "Giraffe")
+//        {
+//            Debug.Log("hit the box collider");
+//        }
+//    }
 }

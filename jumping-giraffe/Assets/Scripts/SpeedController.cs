@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SpeedController : MonoBehaviour {
-    public float minCreationTime = 15f;
+    public float minCreationTime = 45f;
     public float maxCreationTime = 200f;
     public GameObject speedPrefab;
 

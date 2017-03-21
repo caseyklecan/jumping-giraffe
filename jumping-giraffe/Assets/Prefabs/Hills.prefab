@@ -41,8 +41,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1724376224837368}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1.330733, z: 1}
+  m_LocalPosition: {x: 0, y: 0.75, z: 0}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -58,9 +58,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0.21216053, y: -2.6937294}
+  m_Offset: {x: 0.1648753, y: -2.6937294}
   serializedVersion: 2
-  m_Size: {x: 0.7975701, y: 0.3148998}
+  m_Size: {x: 0.89214057, y: 0.3149001}
 --- !u!61 &61550715852839584
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -72,9 +72,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 4.5126486, y: -2.7249289}
+  m_Offset: {x: 4.484279, y: -2.7249289}
   serializedVersion: 2
-  m_Size: {x: 0.78424597, y: 0.24546166}
+  m_Size: {x: 1.0301298, y: 0.24546179}
 --- !u!61 &61766275505925784
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -86,9 +86,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: -1.9710022, y: -2.8056438}
+  m_Offset: {x: -1.9804592, y: -2.8056438}
   serializedVersion: 2
-  m_Size: {x: 0.682904, y: 0.30927622}
+  m_Size: {x: 1.0422721, y: 0.30927595}
 --- !u!61 &61929067060925424
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -100,9 +100,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 2.4620163, y: -2.806823}
+  m_Offset: {x: 2.5093026, y: -2.8068233}
   serializedVersion: 2
-  m_Size: {x: 0.7370925, y: 0.3555061}
+  m_Size: {x: 1.1342874, y: 0.35550627}
 --- !u!61 &61964828390508418
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -114,9 +114,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: -4.2828655, y: -2.850283}
+  m_Offset: {x: -4.292323, y: -2.8502834}
   serializedVersion: 2
-  m_Size: {x: 0.81627464, y: 0.23873144}
+  m_Size: {x: 1.0621576, y: 0.23873138}
 --- !u!68 &68610308865667778
 EdgeCollider2D:
   m_ObjectHideFlags: 1
@@ -137,8 +137,8 @@ EdgeCollider2D:
   - {x: -2.5299609, y: -2.9827235}
   - {x: -1.3112282, y: -2.980045}
   - {x: -0.87012607, y: -3.6329563}
-  - {x: -0.34343404, y: -2.8664596}
-  - {x: 0.64458704, y: -2.8448353}
+  - {x: -0.4032504, y: -2.8903863}
+  - {x: 0.82403684, y: -2.868762}
   - {x: 1.4216734, y: -3.6401522}
   - {x: 1.9145551, y: -2.9972317}
   - {x: 3.092282, y: -2.9756434}
