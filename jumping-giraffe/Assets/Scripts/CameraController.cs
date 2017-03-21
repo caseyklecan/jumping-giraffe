@@ -7,7 +7,7 @@ public class CameraController : MonoBehaviour {
 	private Transform giraffe;
 	public GiraffeController gf;
 
-	private float timeLeft = 45f;
+	private float timeLeft = 30f;
 
 	void Start () {
 		giraffe = GameObject.Find ("Giraffe").transform;

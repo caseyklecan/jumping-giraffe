@@ -8,7 +8,6 @@ public class GiraffeController : MonoBehaviour {
 
 	public float transformDist = 1.5f;
 	public float jumpForce = 6f;
-	public float yDist = 0f;
 
 	public AudioClip bounceSound;
     public AudioClip powerUpSound;
@@ -24,7 +23,7 @@ public class GiraffeController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		// how the giraffe moves
-		Vector3 newPos = new Vector3 (transform.position.x + transformDist, transform.position.y + yDist, transform.position.z);
+		Vector3 newPos = new Vector3 (transform.position.x + transformDist, transform.position.y, transform.position.z);
 		transform.position = Vector3.Lerp (transform.position, newPos, Time.deltaTime);
 	
         if (Input.GetKeyDown("space"))
@@ -129,7 +128,6 @@ public class GiraffeController : MonoBehaviour {
 		Animator a = GetComponent<Animator>();
 		a.SetBool ("Win", true);
 		Rigidbody2D rb = GetComponent<Rigidbody2D> ();
-		rb.AddForce (1.15f * jumpForce * Vector2.up, ForceMode2D.Impulse);
 		Invoke ("WinScene", 2f);
 	}
 
