@@ -22,6 +22,7 @@ public class SpeedController : MonoBehaviour {
         if (other.CompareTag("Giraffe"))
         {
             Destroy(gameObject);
+			Invoke("CreateSpeedPowerUp", Random.Range(minCreationTime, maxCreationTime));
         }
     }
 

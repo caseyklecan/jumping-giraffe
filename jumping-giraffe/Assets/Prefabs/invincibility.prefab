@@ -88,6 +88,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1b1df920ca2d004f9ab28e744197fce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minCreationTime: 15
+  maxCreationTime: 60
+  invincibilityPrefab: {fileID: 1596514996725020}
 --- !u!212 &212550976509038672
 SpriteRenderer:
   m_ObjectHideFlags: 1

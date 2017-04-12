@@ -12,7 +12,7 @@ public class GiraffeController : MonoBehaviour {
 	public AudioClip bounceSound;
     public AudioClip powerUpSound;
 
-	private bool invincible = false;
+	private bool invincible = true;//false;
 
 
 	// Use this for initialization
@@ -50,7 +50,6 @@ public class GiraffeController : MonoBehaviour {
 			JumpByForce ();
 		} else { 
 			FlyOff ();
-//			Invoke("Lose", 1.5f);
 		}
 	}
 

@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class InvincibilityController : MonoBehaviour {
 
+	public float minCreationTime = 5f;
+	public float maxCreationTime = 60f;
+	public GameObject invincibilityPrefab;
+
 	// Use this for initialization
 	void Start () {
-		
+		Invoke("CreateInvincibilityPowerUp", minCreationTime);
 	}
 	
 	// Update is called once per frame
@@ -19,6 +23,19 @@ public class InvincibilityController : MonoBehaviour {
         if (other.CompareTag("Giraffe"))
         {
             Destroy(gameObject);
+			Invoke ("CreateInvincibilityPowerUp", Random.Range (minCreationTime, maxCreationTime));
         }
     }
+
+	void CreateInvincibilityPowerUp() { 
+		Camera camera = Camera.main;
+		Vector3 cameraPos = camera.transform.position;
+		float xMax = camera.aspect * camera.orthographicSize;
+		float xRange = camera.aspect * camera.orthographicSize * 1.75f;
+		float yMax = camera.orthographicSize - 0.5f;
+		Vector3 invPos = new Vector3(cameraPos.x + Random.Range(xMax - xRange, xMax), Random.Range (-yMax, yMax), invincibilityPrefab.transform.position.z);
+		Instantiate(invincibilityPrefab, invPos, Quaternion.identity);
+		Invoke("CreateInvincibilityPowerUp", Random.Range(minCreationTime, maxCreationTime));
+
+	}
 }
