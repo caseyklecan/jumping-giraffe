@@ -31,6 +31,9 @@ http://vignette1.wikia.nocookie.net/fantendo/images/7/77/Super_Star_NSMB.png/rev
 Speed Icon Image
 http://d3lcw15dvjhkjt.cloudfront.net/extensions/labs/sites/bbhmm/images/powerup-2.png
 
+Apple Image
+http://pngimg.com/img/fruits/apple
+
 ### Who do I talk to? ###
 
 * Repo owner or admin
