@@ -12,7 +12,7 @@ public class GiraffeController : MonoBehaviour {
 	public AudioClip bounceSound;
     public AudioClip powerUpSound;
 
-	private bool invincible = true;//false;
+	private bool invincible = false;
 
 
 	// Use this for initialization
@@ -111,9 +111,10 @@ public class GiraffeController : MonoBehaviour {
 			Animator a = GetComponent<Animator>();
 			a.SetBool ("Dead", true);
 			Rigidbody2D rb = GetComponent<Rigidbody2D> ();
-			rb.AddForce (1.15f * jumpForce * Vector2.up, ForceMode2D.Impulse);
+			transformDist = .1f;
+			rb.isKinematic = true;
 
-			Invoke ("Lose", 2f);
+			Invoke ("Lose", 3f);
 		} else { 
 			JumpByForce ();
 		}
@@ -126,7 +127,6 @@ public class GiraffeController : MonoBehaviour {
 	public void Win() { 
 		Animator a = GetComponent<Animator>();
 		a.SetBool ("Win", true);
-		Rigidbody2D rb = GetComponent<Rigidbody2D> ();
 		Invoke ("WinScene", 2f);
 	}
 

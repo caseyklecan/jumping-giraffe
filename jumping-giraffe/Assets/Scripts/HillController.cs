@@ -44,7 +44,6 @@ public class HillController : MonoBehaviour {
         {
 			int index = Random.Range (0, colors.Length);
 			spriteRenderer.color = colors [index];
-			Debug.Log ("choosing color " + index);
 			currentSize = Random.Range (0, hillSizes.Length);
 			currentHeight = Random.Range (0, hillHeights.Length);
 			Vector3 newPos = transform.position;

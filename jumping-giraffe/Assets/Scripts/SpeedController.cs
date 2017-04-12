@@ -31,8 +31,8 @@ public class SpeedController : MonoBehaviour {
         Camera camera = Camera.main;
         Vector3 cameraPos = camera.transform.position;
         float xMax = camera.aspect * camera.orthographicSize;
-        float xRange = camera.aspect * camera.orthographicSize * 1.75f;
-        float yMax = camera.orthographicSize - 0.5f;
+		float xRange = (camera.aspect * camera.orthographicSize * 1.75f) / 2f;
+        float yMax = camera.orthographicSize - 1.5f;
         Vector3 speedPos = new Vector3(cameraPos.x + Random.Range(xMax - xRange, xMax), Random.Range (-yMax, yMax), speedPrefab.transform.position.z);
         Instantiate(speedPrefab, speedPos, Quaternion.identity);
         Invoke("CreateSpeedPowerUp", Random.Range(minCreationTime, maxCreationTime));
