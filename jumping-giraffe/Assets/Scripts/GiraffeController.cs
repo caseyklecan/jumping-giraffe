@@ -112,7 +112,7 @@ public class GiraffeController : MonoBehaviour {
 			a.SetBool ("Dead", true);
 			Rigidbody2D rb = GetComponent<Rigidbody2D> ();
 			transformDist = .1f;
-			rb.isKinematic = true;
+			rb.AddForce (.5f * jumpForce * Vector2.up);
 
 			Invoke ("Lose", 3f);
 		} else { 
