@@ -14,4 +14,8 @@ public class StartGame : MonoBehaviour {
         SceneManager.LoadScene("startScene");
     }
 
+	public void Instructions() {
+		SceneManager.LoadScene ("instructionScene");
+	}
+
 }
