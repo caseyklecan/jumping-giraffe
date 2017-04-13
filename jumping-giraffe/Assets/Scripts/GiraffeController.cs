@@ -114,7 +114,7 @@ public class GiraffeController : MonoBehaviour {
 			transformDist = .1f;
 			rb.AddForce (.5f * jumpForce * Vector2.up);
 
-			Invoke ("Lose", 3f);
+			Invoke ("Lose", 2.5f);
 		} else { 
 			JumpByForce ();
 		}
@@ -127,7 +127,7 @@ public class GiraffeController : MonoBehaviour {
 	public void Win() { 
 		Animator a = GetComponent<Animator>();
 		a.SetBool ("Win", true);
-		Invoke ("WinScene", 2f);
+		Invoke ("WinScene", 2.5f);
 	}
 
 	void WinScene() { 
