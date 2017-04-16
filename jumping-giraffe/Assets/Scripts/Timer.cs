@@ -6,7 +6,7 @@ using UnityEngine;
 public class Timer : MonoBehaviour {
 
 	public float time;
-	public Text timerGT;
+	private Text timerGT;
 	GameObject timerGO;
 
 	// Use this for initialization

@@ -17,11 +17,12 @@ public class GiraffeController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+
 	}
 
 	// Update is called once per frame
 	void Update () {
+
 		// how the giraffe moves
 		Vector3 newPos = new Vector3 (transform.position.x + transformDist, transform.position.y, transform.position.z);
 		transform.position = Vector3.Lerp (transform.position, newPos, Time.deltaTime);
@@ -60,10 +61,11 @@ public class GiraffeController : MonoBehaviour {
 			transformDist = 4f;
 			Invoke ("ReturnTransformDist", 4f);
             
-		} else if (other.CompareTag ("Invincibility")) {
+		} 
+		else if (other.CompareTag ("Invincibility")) {
 			MakeInvincible ();
 			GetComponent<AudioSource> ().PlayOneShot (powerUpSound);
-		}
+		} 
     }
 
     void ReturnTransformDist()
