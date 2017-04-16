@@ -6,6 +6,7 @@ using UnityEngine;
 public class Timer : MonoBehaviour {
 
 	public float time;
+	private int timeInt;
 	private Text timerGT;
 	GameObject timerGO;
 
@@ -13,15 +14,16 @@ public class Timer : MonoBehaviour {
 	void Start () {
 		timerGO = GameObject.Find ("Timer");
 		timerGT = timerGO.GetComponent<Text> ();
-		timerGT.text = "30.0";
-		time = 30.0f;
+		timerGT.text = "30";
+		time = 30;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		time -= Time.deltaTime;
-		timerGT.text = time.ToString();
-		if (time < 0.0f) {
+		timeInt = (int)time;
+		timerGT.text = "Time: " + timeInt.ToString();
+		if (time < 0) {
 			//timerGO.GetComponent<GiraffeController> ().Win ();
 		}
 	}

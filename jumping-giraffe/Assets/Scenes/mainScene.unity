@@ -447,7 +447,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 0
+  m_Text: 'Points: 0'
 --- !u!222 &786691443
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -484,7 +484,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e621fab274d814a7f87731ef64f777f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  time: 30
+  time: 0
 --- !u!114 &825263923
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1046,7 +1046,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 30.0
+  m_Text: 'Time: 30'
 --- !u!222 &1726817253
 CanvasRenderer:
   m_ObjectHideFlags: 0

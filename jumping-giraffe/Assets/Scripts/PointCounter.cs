@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class PointCounter : MonoBehaviour {
 	private float time;
+	private float timeInt;
 	private Text appleGT;
 	GameObject appleGO;
 
@@ -12,14 +13,15 @@ public class PointCounter : MonoBehaviour {
 	void Start () {
 		appleGO = GameObject.Find ("AppleCounter");
 		appleGT = appleGO.GetComponent<Text> ();
-		appleGT.text = "0";
+		appleGT.text = "Points: 0";
 		time = 0.0f;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		time += Time.deltaTime;
-		appleGT.text = time.ToString();
+		timeInt = (int)time;
+		appleGT.text = "Points: " + timeInt.ToString();
 	}
 
 	void OnTriggerEnter2D(Collider2D other) {
