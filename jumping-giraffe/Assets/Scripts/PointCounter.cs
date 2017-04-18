@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PointCounter : MonoBehaviour {
 	private float time;
-	private float timeInt;
+	public int timeInt;
 	private Text appleGT;
 	GameObject appleGO;
 
@@ -30,4 +30,14 @@ public class PointCounter : MonoBehaviour {
 			time += 10.0f;
 		}
 	}
+
+	public int getScore() {
+		return timeInt;
+	}
+
+	public void setScore(int x) {
+		timeInt = x;
+	}
+		
+
 }
