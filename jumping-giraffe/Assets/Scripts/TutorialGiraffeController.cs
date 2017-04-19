@@ -4,15 +4,19 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using System;
 
-public class GiraffeController : MonoBehaviour {
+public class TutorialGiraffeController : MonoBehaviour {
 
-	public float transformDist = 1.3f;
+	public float transformDist = 1.5f;
 	public float jumpForce = 6f;
 
 	public AudioClip bounceSound;
     public AudioClip powerUpSound;
 
-	private bool invincible = false;
+	private bool invincible = true;
+	private bool active = false;
+
+	private int section = 0;
+	private bool isFlipping = false;
 
 
 	// Use this for initialization
@@ -27,7 +31,16 @@ public class GiraffeController : MonoBehaviour {
 		Vector3 newPos = new Vector3 (transform.position.x + transformDist, transform.position.y, transform.position.z);
 		transform.position = Vector3.Lerp (transform.position, newPos, Time.deltaTime);
 	
-        if (Input.GetKeyDown("space"))
+		if (!active)
+			return;
+
+//		if (isFlipping) {
+//			Debug.Log ("Rotating 15 on z with rotation: " + -100 * Time.deltaTime);
+//			transform.Rotate (0, 0, -100 * Time.deltaTime);
+//
+//		}
+
+		if (Input.GetKeyDown("space"))
         {
 			Flip ();
         }
@@ -50,7 +63,7 @@ public class GiraffeController : MonoBehaviour {
 		if (t == typeof(UnityEngine.BoxCollider2D)) {
 			JumpByForce ();
 		} else { 
-			FlyOff ();
+//			FlyOff ();
 		}
 	}
 
@@ -81,33 +94,35 @@ public class GiraffeController : MonoBehaviour {
 		src.PlayOneShot (bounceSound);
 	}
 
-	void Flip() { 
-		Animator a = GetComponent<Animator> ();
-		a.SetBool ("Flipping", true);
+	public void Flip() { 
+//		Animator a = GetComponent<Animator> ();
+//		a.SetBool ("Flipping", true);
 		transformDist = 3f;
+		isFlipping = true;
 		Invoke ("StopFlip", 1.5f);
 	}
 
-	void StopFlip() { 
-		Animator a = GetComponent<Animator> ();
-		a.SetBool ("Flipping", false);
-		transformDist = 1.5f;
+	public void StopFlip() { 
+//		Animator a = GetComponent<Animator> ();
+//		a.SetBool ("Flipping", false);
+		isFlipping = false;
+		transformDist = 1.3f;
 	}
 
-	void MakeInvincible() { 
+	public void MakeInvincible() { 
 		invincible = true;
 		Animator a = GetComponent<Animator>();
 		a.SetBool ("Invincible", true);
 		Invoke("TurnOffInvincibility", 3f);
 	}
 
-	void TurnOffInvincibility() { 
+	public void TurnOffInvincibility() { 
 		invincible = false;
 		Animator a = GetComponent<Animator>();
 		a.SetBool ("Invincible", false);
 	}
 
-	void FlyOff() { 
+	public void FlyOff() { 
 		if (!invincible) {
 			// want to make this smoother
 			Animator a = GetComponent<Animator>();
@@ -122,18 +137,17 @@ public class GiraffeController : MonoBehaviour {
 		}
 	}
 
-	void Lose() { 
-		SceneManager.LoadScene ("loseScene");
+	public void ToggleActive() {
+		active = !active;
+		if (!active)
+			section++;
 	}
 
-	public void Win() { 
-		Animator a = GetComponent<Animator>();
-		a.SetBool ("Win", true);
-		Invoke ("WinScene", 2.5f);
+	public int GetSection() {
+		return section;
 	}
 
-	void WinScene() { 
-		SceneManager.LoadScene ("winScene");
+	public void SetNotInvincible() {
+		invincible = false;
 	}
-
 }
