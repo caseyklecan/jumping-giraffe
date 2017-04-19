@@ -12,19 +12,22 @@ public class GiraffeController : MonoBehaviour {
 	public AudioClip bounceSound;
     public AudioClip powerUpSound;
 
+	private Animator a;
 	private bool invincible = false;
-
+	private bool dead = false;
+	private Vector3 newPos;
 
 	// Use this for initialization
 	void Start () {
-
+		a = GetComponent<Animator> ();
 	}
 
 	// Update is called once per frame
 	void Update () {
 
 		// how the giraffe moves
-		Vector3 newPos = new Vector3 (transform.position.x + transformDist, transform.position.y, transform.position.z);
+		if (!dead) 
+			newPos = new Vector3 (transform.position.x + transformDist, transform.position.y, transform.position.z);
 		transform.position = Vector3.Lerp (transform.position, newPos, Time.deltaTime);
 	
         if (Input.GetKeyDown("space"))
@@ -82,39 +85,33 @@ public class GiraffeController : MonoBehaviour {
 	}
 
 	void Flip() { 
-		Animator a = GetComponent<Animator> ();
 		a.SetBool ("Flipping", true);
 		transformDist = 3f;
 		Invoke ("StopFlip", 1.5f);
 	}
 
 	void StopFlip() { 
-		Animator a = GetComponent<Animator> ();
 		a.SetBool ("Flipping", false);
 		transformDist = 1.5f;
 	}
 
 	void MakeInvincible() { 
 		invincible = true;
-		Animator a = GetComponent<Animator>();
 		a.SetBool ("Invincible", true);
 		Invoke("TurnOffInvincibility", 3f);
 	}
 
 	void TurnOffInvincibility() { 
 		invincible = false;
-		Animator a = GetComponent<Animator>();
 		a.SetBool ("Invincible", false);
 	}
 
 	void FlyOff() { 
 		if (!invincible) {
 			// want to make this smoother
-			Animator a = GetComponent<Animator>();
 			a.SetBool ("Dead", true);
-			Rigidbody2D rb = GetComponent<Rigidbody2D> ();
-			transformDist = .1f;
-			rb.AddForce (.5f * jumpForce * Vector2.up);
+			dead = true;
+			newPos = new Vector3 (transform.position.x, transform.position.y + 10f, transform.position.z);
 
 			Invoke ("Lose", 2.5f);
 		} else { 
@@ -127,7 +124,6 @@ public class GiraffeController : MonoBehaviour {
 	}
 
 	public void Win() { 
-		Animator a = GetComponent<Animator>();
 		a.SetBool ("Win", true);
 		Invoke ("WinScene", 2.5f);
 	}

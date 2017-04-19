@@ -17,7 +17,7 @@ public class TutorialButtonController : MonoBehaviour {
 		tryText = "Try it!";
 		gotItText = "Got it!";
 		describeJump = "Jump on your pogo stick to catch up with the other giraffes! Swipe right to flip in the air and go farther!";
-		describeDeath = "But don't fall in the valleys between the hills! You'll fly off the hill and lose :(";
+		describeDeath = "Don't fall in the valleys between the hills! You'll fly off the hill and lose :(";
 		describeStar = "If you pick up a star, you'll be invincible for a few seconds";
 		describeSpeed = "If you pick up lightning, you'll go extra fast for a few seconds";
 		describeApple = "Pick up apples to get extra points along your way!";
@@ -49,12 +49,15 @@ public class TutorialButtonController : MonoBehaviour {
 			break;
 		case 3:
 			description.text = describeApple;
+
 			break;
-		case 4: 
+		case 5: 
 			description.text = describeWin;
+
 			break;
-		case 5:
+		case 4:
 			description.text = describeDeath;
+
 			break;
 		default:
 			break;
@@ -68,11 +71,12 @@ public class TutorialButtonController : MonoBehaviour {
 			buttonText.text = gotItText;
 		} else {
 			buttonText.text = tryText;
+			ResetGiraffe ();
 		}
 	}
 
 	void ResetGiraffe() {
-		
+		gf.ResetPosition ();
 	}
 
 	void SetUpStar() {

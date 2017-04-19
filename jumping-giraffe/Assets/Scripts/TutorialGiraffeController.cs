@@ -12,6 +12,8 @@ public class TutorialGiraffeController : MonoBehaviour {
 	public AudioClip bounceSound;
     public AudioClip powerUpSound;
 
+	private Animator a;
+
 	private bool invincible = true;
 	private bool active = false;
 
@@ -21,7 +23,7 @@ public class TutorialGiraffeController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
+		a = GetComponent<Animator> ();
 	}
 
 	// Update is called once per frame
@@ -96,36 +98,36 @@ public class TutorialGiraffeController : MonoBehaviour {
 
 	public void Flip() { 
 //		Animator a = GetComponent<Animator> ();
-//		a.SetBool ("Flipping", true);
+		a.SetBool ("Flipping", true);
 		transformDist = 3f;
 		isFlipping = true;
 		Invoke ("StopFlip", 1.5f);
 	}
 
 	public void StopFlip() { 
-//		Animator a = GetComponent<Animator> ();
-//		a.SetBool ("Flipping", false);
+		Animator a = GetComponent<Animator> ();
+		a.SetBool ("Flipping", false);
 		isFlipping = false;
 		transformDist = 1.3f;
 	}
 
 	public void MakeInvincible() { 
 		invincible = true;
-		Animator a = GetComponent<Animator>();
+//		Animator a = GetComponent<Animator>();
 		a.SetBool ("Invincible", true);
 		Invoke("TurnOffInvincibility", 3f);
 	}
 
 	public void TurnOffInvincibility() { 
 		invincible = false;
-		Animator a = GetComponent<Animator>();
+//		Animator a = GetComponent<Animator>();
 		a.SetBool ("Invincible", false);
 	}
 
 	public void FlyOff() { 
 		if (!invincible) {
 			// want to make this smoother
-			Animator a = GetComponent<Animator>();
+//			Animator a = GetComponent<Animator>();
 			a.SetBool ("Dead", true);
 			Rigidbody2D rb = GetComponent<Rigidbody2D> ();
 			transformDist = .1f;
@@ -149,5 +151,9 @@ public class TutorialGiraffeController : MonoBehaviour {
 
 	public void SetNotInvincible() {
 		invincible = false;
+	}
+
+	public void ResetPosition() { 
+		transform.position = new Vector3 (transform.position.x, 2f, 0f);
 	}
 }
