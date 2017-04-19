@@ -225,11 +225,11 @@ MonoBehaviour:
   m_Text: "You have always wanted to be as tall and fast as your friends, and now
     you can be!  Using your pogo stick, you will be able to bounce off the top of
     the hills.  If you want to stay in the air for longer, swipe your finger across
-    the screen.  Make sure to avoid the sides of the hills, otherwise, it's game over.
-    \ If you are able to survive for 30 seconds without hitting the side of a hill,
-    you win!  \n\nPower Ups:\nIf you hit a lightning bolt, your giraffe will speed
-    up for 2 seconds.  If you hit a star, you will become invincible for 2 seconds.\n\nHappy
-    bouncing!!"
+    the screen to the right to flip.  Make sure to avoid the sides of the hills, otherwise,
+    it's game over.  If you are able to survive for 30 seconds without hitting the
+    side of a hill, you win!  \n\n\nPower Ups:\nIf you hit a lightning bolt, your
+    giraffe will speed up for 2 seconds.  If you hit a star, you will become invincible
+    for 2 seconds. Apples earn you extra points! \n\nHappy bouncing!!"
 --- !u!222 &196000963
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -416,7 +416,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 677114182}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.54, y: -1.19, z: 0}
+  m_LocalPosition: {x: 6.54, y: -1.4, z: 0}
   m_LocalScale: {x: 0.6, y: 0.6, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -800,7 +800,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1322319939}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.64, y: -1.08, z: 0}
+  m_LocalPosition: {x: -6.64, y: -1.4, z: 0}
   m_LocalScale: {x: 0.05, y: 0.05, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1064,7 +1064,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 18
+    m_FontSize: 22
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
