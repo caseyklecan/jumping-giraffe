@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class HighScore : MonoBehaviour {
 	static public int score = 0;
-	GameObject highScoreGO;
+	private GameObject highScoreGO;
 	public Text highScore;
 
 	void Awake () {
