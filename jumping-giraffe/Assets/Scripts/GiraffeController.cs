@@ -19,12 +19,14 @@ public class GiraffeController : MonoBehaviour {
 	private bool secondStar = false;
 
 	private Vector3 newPos;
-	public GameObject redDot;
+	private GameObject redDot;
+	private GameObject greenDot;
 
 	// Use this for initialization
 	void Start () {
 		a = GetComponent<Animator> ();
 		redDot = GameObject.Find ("redDot");
+		greenDot = GameObject.Find ("greenDot");
 	}
 
 	// Update is called once per frame
@@ -58,7 +60,7 @@ public class GiraffeController : MonoBehaviour {
 		if (t == typeof(UnityEngine.BoxCollider2D)) {
 			Debug.Log("Points colliding: " + c.contacts.Length);
 			Debug.Log("First point that collided: " + c.contacts[0].point);
-			Instantiate (redDot, c.contacts [0].point, Quaternion.identity);
+			Instantiate (greenDot, c.contacts [0].point, Quaternion.identity);
 			JumpByForce ();
 		} else { 
 			Instantiate (redDot, c.contacts [0].point, Quaternion.identity);

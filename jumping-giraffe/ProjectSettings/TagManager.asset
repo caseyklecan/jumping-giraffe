@@ -8,6 +8,8 @@ TagManager:
   - Invincibility
   - Speed
   - Apple
+  - RedDot
+  - GreenDot
   layers:
   - Default
   - TransparentFX
