@@ -58,6 +58,7 @@ public class TutorialButtonController : MonoBehaviour {
 				SetUpApple ();
 			break;
 		case 5: 
+			gf.ResetPosition ();
 			description.text = describeWin;
 			buttonText.text = "Main Menu";
 			if (active) 
@@ -65,7 +66,7 @@ public class TutorialButtonController : MonoBehaviour {
 			break;
 		case 4:
 			description.text = describeDeath;
-
+			gf.SetNotInvincible ();
 			break;
 		default:
 			break;

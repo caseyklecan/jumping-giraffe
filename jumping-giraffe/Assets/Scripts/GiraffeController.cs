@@ -15,6 +15,9 @@ public class GiraffeController : MonoBehaviour {
 	private Animator a;
 	private bool invincible = false;
 	private bool dead = false;
+	private bool secondPickup = false;
+	private bool secondStar = false;
+
 	private Vector3 newPos;
 
 	// Use this for initialization
@@ -60,12 +63,21 @@ public class GiraffeController : MonoBehaviour {
     void OnTriggerEnter2D(Collider2D other)
     {
 		if (other.CompareTag ("Speed")) {
-			GetComponent<AudioSource> ().PlayOneShot (powerUpSound);
-			transformDist = 4f;
-			Invoke ("ReturnTransformDist", 4f);
+			if (transformDist < 2f) {
+				GetComponent<AudioSource> ().PlayOneShot (powerUpSound);
+				transformDist = 4f;
+				Invoke ("ReturnTransformDist", 4f);
+			} else { 
+				secondPickup = true;
+				GetComponent<AudioSource> ().PlayOneShot (powerUpSound);
+				Invoke ("ReturnTransformDist", 4f);
+			}
             
 		} 
 		else if (other.CompareTag ("Invincibility")) {
+			if (invincible) { 
+				secondStar = true;
+			}
 			MakeInvincible ();
 			GetComponent<AudioSource> ().PlayOneShot (powerUpSound);
 		} 
@@ -73,7 +85,11 @@ public class GiraffeController : MonoBehaviour {
 
     void ReturnTransformDist()
     {
-        transformDist = 1f;
+		if (secondPickup) { 
+			secondPickup = false;
+		} else { 
+			transformDist = 1.3f;
+		}
     }
 
 	// the jump that the user executes
@@ -102,8 +118,12 @@ public class GiraffeController : MonoBehaviour {
 	}
 
 	void TurnOffInvincibility() { 
-		invincible = false;
-		a.SetBool ("Invincible", false);
+		if (secondStar) { 
+			secondStar = false;
+		} else { 
+			invincible = false;
+			a.SetBool ("Invincible", false);
+		}
 	}
 
 	void FlyOff() { 

@@ -123,7 +123,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -213.5, y: 96.5}
+  m_AnchoredPosition: {x: -480, y: 155}
   m_SizeDelta: {x: 278, y: 152}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &11826530
@@ -138,7 +138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.15570934, g: 0.4175516, b: 0.44117647, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -390,7 +390,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -272.5, y: 204}
+  m_AnchoredPosition: {x: -536, y: 311}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &786691442
@@ -562,7 +562,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -241.5, y: 0}
+  m_AnchoredPosition: {x: -513, y: 0}
   m_SizeDelta: {x: 222, y: 41}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1225698515
@@ -584,8 +584,8 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0.17955232, g: 0.5439424, b: 0.5955882, a: 1}
-    m_HighlightedColor: {r: 0.42776817, g: 0.64721143, b: 0.6764706, a: 1}
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -664,6 +664,11 @@ MonoBehaviour:
   gf: {fileID: 1439342747}
   description: {fileID: 11826530}
   buttonText: {fileID: 1505969330}
+  starPrefab: {fileID: 1596514996725020, guid: a9ee9f53ea3e64d43977e0a10068e004, type: 2}
+  speedPrefab: {fileID: 1976482463471534, guid: ecba9bb3c70fbe043adcf391d4aaf639,
+    type: 2}
+  applePrefab: {fileID: 1152394756291214, guid: 056efa19b355641b9a10cea98e95338a,
+    type: 2}
 --- !u!1 &1439342744
 GameObject:
   m_ObjectHideFlags: 0

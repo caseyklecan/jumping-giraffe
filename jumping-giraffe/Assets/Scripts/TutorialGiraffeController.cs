@@ -15,10 +15,12 @@ public class TutorialGiraffeController : MonoBehaviour {
 	private Animator a;
 
 	private bool invincible = true;
+	private bool dead = false;
+	private Vector3 newPos;
 	private bool active = false;
 
 	private int section = 0;
-	private bool isFlipping = false;
+//	private bool isFlipping = false;
 
 
 	// Use this for initialization
@@ -30,7 +32,8 @@ public class TutorialGiraffeController : MonoBehaviour {
 	void Update () {
 
 		// how the giraffe moves
-		Vector3 newPos = new Vector3 (transform.position.x + transformDist, transform.position.y, transform.position.z);
+		if (!dead) 
+			newPos = new Vector3 (transform.position.x + transformDist, transform.position.y, transform.position.z);
 		transform.position = Vector3.Lerp (transform.position, newPos, Time.deltaTime);
 	
 		if (!active)
@@ -65,7 +68,7 @@ public class TutorialGiraffeController : MonoBehaviour {
 		if (t == typeof(UnityEngine.BoxCollider2D)) {
 			JumpByForce ();
 		} else { 
-//			FlyOff ();
+			FlyOff ();
 		}
 	}
 
@@ -100,40 +103,35 @@ public class TutorialGiraffeController : MonoBehaviour {
 //		Animator a = GetComponent<Animator> ();
 		a.SetBool ("Flipping", true);
 		transformDist = 3f;
-		isFlipping = true;
+//		isFlipping = true;
 		Invoke ("StopFlip", 1.5f);
 	}
 
 	public void StopFlip() { 
 		Animator a = GetComponent<Animator> ();
 		a.SetBool ("Flipping", false);
-		isFlipping = false;
+//		isFlipping = false;
 		transformDist = 1.3f;
 	}
 
 	public void MakeInvincible() { 
 		invincible = true;
-//		Animator a = GetComponent<Animator>();
 		a.SetBool ("Invincible", true);
 		Invoke("TurnOffInvincibility", 3f);
 	}
 
 	public void TurnOffInvincibility() { 
-		invincible = false;
-//		Animator a = GetComponent<Animator>();
 		a.SetBool ("Invincible", false);
 	}
 
 	public void FlyOff() { 
 		if (!invincible) {
 			// want to make this smoother
-//			Animator a = GetComponent<Animator>();
 			a.SetBool ("Dead", true);
-			Rigidbody2D rb = GetComponent<Rigidbody2D> ();
-			transformDist = .1f;
-			rb.AddForce (.5f * jumpForce * Vector2.up);
+			dead = true;
+			newPos = new Vector3 (transform.position.x, transform.position.y + 10f, transform.position.z);
 
-			Invoke ("Lose", 2.5f);
+			Invoke ("ResetPosition", 2.5f);
 		} else { 
 			JumpByForce ();
 		}
