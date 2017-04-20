@@ -58,8 +58,6 @@ public class GiraffeController : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D c) { 
 		Type t = c.collider.GetType ();
 		if (t == typeof(UnityEngine.BoxCollider2D)) {
-			Debug.Log("Points colliding: " + c.contacts.Length);
-			Debug.Log("First point that collided: " + c.contacts[0].point);
 			Instantiate (greenDot, c.contacts [0].point, Quaternion.identity);
 			JumpByForce ();
 		} else { 
