@@ -26,7 +26,9 @@ public class HighScore : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		highScore.text = "High Score: " + score.ToString();
-		PointCounter pcScript = Camera.main.GetComponent<PointCounter>();
+//		PointCounter pcScript = Camera.main.GetComponent<PointCounter>();
+//		PointCounter pcScript = GetComponent<PointCounter>();
+		PointCounter pcScript = (PointCounter)gameObject.GetComponent(typeof(PointCounter));
 		if (pcScript.getScore() > score)
 		{
 			score = pcScript.getScore();
