@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class TutorialButtonController : MonoBehaviour {
 
@@ -9,7 +10,9 @@ public class TutorialButtonController : MonoBehaviour {
 	public Text description;
 	public Text buttonText;
 
-	private string tryText, gotItText, describeJump, describeDeath, describeStar, describeSpeed, describeApple, describeWin;
+	public GameObject starPrefab, speedPrefab, applePrefab;
+
+	private string tryText, gotItText, describeJump, describeDeath, describeStar, describeSpeed, describeApple, describeWin, goToGame;
 	private bool active = false;
 
 	// Use this for initialization
@@ -41,19 +44,24 @@ public class TutorialButtonController : MonoBehaviour {
 			break;
 		case 1:
 			description.text = describeSpeed;
-
+			if (active)
+				SetUpSpeed ();
 			break;
 		case 2:
 			description.text = describeStar;
-
+			if (active) 
+				SetUpStar ();
 			break;
 		case 3:
 			description.text = describeApple;
-
+			if (active)
+				SetUpApple ();
 			break;
 		case 5: 
 			description.text = describeWin;
-
+			buttonText.text = "Main Menu";
+			if (active) 
+				SceneManager.LoadScene ("startScene");
 			break;
 		case 4:
 			description.text = describeDeath;
@@ -76,18 +84,21 @@ public class TutorialButtonController : MonoBehaviour {
 	}
 
 	void ResetGiraffe() {
-		gf.ResetPosition ();
+//		gf.ResetPosition ();
 	}
 
 	void SetUpStar() {
-
+		Vector3 starPos = new Vector3 (gf.transform.position.x + 5f, 2f, 0f);
+		Instantiate (starPrefab, starPos, Quaternion.identity);
 	}
 
 	void SetUpSpeed() { 
-
+		Vector3 speedPos = new Vector3 (gf.transform.position.x + 5f, 2f, 0f);
+		Instantiate (speedPrefab, speedPos, Quaternion.identity);
 	}
 
 	void SetUpApple() { 
-
+		Vector3 applePos = new Vector3 (gf.transform.position.x + 5f, 2f, 0f);
+		Instantiate (applePrefab, applePos, Quaternion.identity);
 	}
 }
