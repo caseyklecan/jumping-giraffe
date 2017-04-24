@@ -11,28 +11,8 @@ public class HighScore : MonoBehaviour {
 	void Awake () {
 		highScoreGO = GameObject.Find("Title");
 		highScore = highScoreGO.GetComponent<Text> ();
-		if (PlayerPrefs.HasKey("JumpingGiraffeHighScore"))
-		{
-			score = PlayerPrefs.GetInt("JumpingGiraffeHighScore");
-		}
-		else
-		{
-			score = 0;
-		}
-		PlayerPrefs.SetInt("JumpingGiraffeHighScore", score);
+		score = PlayerPrefs.GetInt("JumpingGiraffeHighScore", 0);
 		highScore.text = "High Score: " + score.ToString();
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		highScore.text = "High Score: " + score.ToString();
-//		PointCounter pcScript = Camera.main.GetComponent<PointCounter>();
-//		PointCounter pcScript = GetComponent<PointCounter>();
-		PointCounter pcScript = (PointCounter)gameObject.GetComponent(typeof(PointCounter));
-		if (pcScript.getScore() > score)
-		{
-			score = pcScript.getScore();
-			PlayerPrefs.SetInt("JumpingGiraffeHighScore", score);
-		}
-	}
+
 }

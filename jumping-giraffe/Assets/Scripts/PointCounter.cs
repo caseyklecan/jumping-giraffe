@@ -6,6 +6,7 @@ using UnityEngine;
 public class PointCounter : MonoBehaviour {
 	private float time;
 	private int timeInt;
+	public int score;
 	private Text appleGT;
 	GameObject appleGO;
 
@@ -15,6 +16,14 @@ public class PointCounter : MonoBehaviour {
 		appleGT = appleGO.GetComponent<Text> ();
 		appleGT.text = "Points: 0";
 		time = 0.0f;
+		if (PlayerPrefs.HasKey("JumpingGiraffeHighScore"))
+		{
+			score = PlayerPrefs.GetInt("JumpingGiraffeHighScore");
+		}
+		else
+		{
+			score = 0;
+		}
 	}
 	
 	// Update is called once per frame
@@ -38,6 +47,14 @@ public class PointCounter : MonoBehaviour {
 
 	public void setScore(int x) {
 		timeInt = x;
+	}
+
+	void OnDisable()
+	{
+		if (timeInt > score) {
+			PlayerPrefs.SetInt("JumpingGiraffeHighScore", timeInt);
+			PlayerPrefs.Save ();
+		}
 	}
 		
 
