@@ -137,7 +137,7 @@ public class GiraffeController : MonoBehaviour {
 			// want to make this smoother
 			a.SetBool ("Dead", true);
 			dead = true;
-			newPos = new Vector3 (transform.position.x, transform.position.y + 10f, transform.position.z);
+			newPos = new Vector3 (transform.position.x + 5f, transform.position.y + 5f, transform.position.z);
 
 			Invoke ("Lose", 2.5f);
 		} else { 

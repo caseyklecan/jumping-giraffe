@@ -20,7 +20,7 @@ public class TutorialButtonController : MonoBehaviour {
 		tryText = "Try it!";
 		gotItText = "Got it!";
 		describeJump = "Jump on your pogo stick to catch up with the other giraffes! Swipe right to flip in the air and go farther!";
-		describeDeath = "Don't fall in the valleys between the hills! You'll fly off the hill and lose :(";
+		describeDeath = "Green dots mean you hit the top of the hill, but red dots mean bad news: don't fall in the valleys between the hills! You'll fly off the hill and lose :(";
 		describeStar = "If you pick up a star, you'll be invincible for a few seconds";
 		describeSpeed = "If you pick up lightning, you'll go extra fast for a few seconds";
 		describeApple = "Pick up apples to get extra points along your way!";

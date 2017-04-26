@@ -14,6 +14,9 @@ public class TutorialGiraffeController : MonoBehaviour {
 	public AudioClip bounceSound;
     public AudioClip powerUpSound;
 
+	public GameObject redDot;
+	public GameObject greenDot;
+
 	private Animator a;
 	private bool invincible = true;
 	private bool dead = false;
@@ -59,8 +62,10 @@ public class TutorialGiraffeController : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D c) { 
 		Type t = c.collider.GetType ();
 		if (t == typeof(UnityEngine.BoxCollider2D)) {
+			Instantiate (greenDot, c.contacts [0].point, Quaternion.identity);
 			JumpByForce ();
 		} else { 
+			Instantiate (redDot, c.contacts [0].point, Quaternion.identity);
 			FlyOff ();
 		}
 	}
@@ -117,7 +122,7 @@ public class TutorialGiraffeController : MonoBehaviour {
 		if (!invincible) {
 			a.SetBool ("Dead", true);
 			dead = true;
-			newPos = new Vector3 (transform.position.x, transform.position.y + 10f, transform.position.z);
+			newPos = new Vector3 (transform.position.x + 5f, transform.position.y + 5f, transform.position.z);
 
 			Invoke ("ResetPosition", 2.5f);
 		} else { 
@@ -140,6 +145,7 @@ public class TutorialGiraffeController : MonoBehaviour {
 	}
 
 	public void ResetPosition() { 
-		transform.position = new Vector3 (transform.position.x, 2f, 0f);
+		a.SetBool("Dead", false);
+		dead = false;
 	}
 }
