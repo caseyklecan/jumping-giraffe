@@ -23,6 +23,7 @@ public class PointCounter : MonoBehaviour {
 		if (PlayerPrefs.HasKey("JumpingGiraffeHighScore"))
 		{
 			score = PlayerPrefs.GetInt("JumpingGiraffeHighScore");
+			Debug.Log ("High score is currently: " + score);
 		}
 		else
 		{
@@ -61,14 +62,15 @@ public class PointCounter : MonoBehaviour {
 		if (timeInt > score) {
 			PlayerPrefs.SetInt("JumpingGiraffeHighScore", timeInt);
 			PlayerPrefs.Save ();
+			Debug.Log ("Saving new high score of: " + timeInt);
 		}
 
 		// achievement logic
-		if (score > 50) { 
+		if (score > 20) { 
 			achievements.SetPinkUnlocked();
 		}
 
-		if (score > 75) { 
+		if (score > 40) { 
 			achievements.SetBlueUnlocked();
 		}
 	}

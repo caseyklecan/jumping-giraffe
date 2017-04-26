@@ -68,18 +68,18 @@ public class AchievementController : MonoBehaviour {
 	public void OnChooseRegular() { 
 		// set multiplier to 1, set sprite to regular, free death to false
 		GiraffeController.SetRegular ();
-		SceneManager.LoadScene ("MainScene");
+		SceneManager.LoadScene ("mainScene");
 	}
 
 	public void OnChoosePink() { 
 		// set multiplier to 2, sprite to pink, free death to false
 		GiraffeController.SetPink ();
-		SceneManager.LoadScene ("MainScene");
+		SceneManager.LoadScene ("mainScene");
 	}
 
 	public void OnChooseBlue() { 
 		// set multiplier to 1, sprite to blue, free death to true
 		GiraffeController.SetBlue ();
-		SceneManager.LoadScene ("MainScene");
+		SceneManager.LoadScene ("mainScene");
 	}
 }

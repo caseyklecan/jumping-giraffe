@@ -17,3 +17,5 @@ EditorBuildSettings:
     path: Assets/Scenes/instructionScene.unity
   - enabled: 1
     path: Assets/Scenes/tutorialScene.unity
+  - enabled: 1
+    path: Assets/Scenes/unlockScene.unity

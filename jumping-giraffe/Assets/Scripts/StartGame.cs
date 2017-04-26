@@ -22,4 +22,8 @@ public class StartGame : MonoBehaviour {
 		SceneManager.LoadScene ("tutorialScene");
 	}
 
+	public void LoadUnlockPage() { 
+		SceneManager.LoadScene ("unlockScene");
+	}
+
 }
