@@ -5,12 +5,13 @@ using UnityEngine;
 
 public class HighScore : MonoBehaviour {
 	static public int score = 0;
-	private GameObject highScoreGO;
+
 	public Text highScore;
+//	private GameObject highScoreGO;
 
 	void Awake () {
-		highScoreGO = GameObject.Find("Title");
-		highScore = highScoreGO.GetComponent<Text> ();
+//		highScoreGO = GameObject.Find("Title");
+//		highScore = highScoreGO.GetComponent<Text> ();
 		score = PlayerPrefs.GetInt("JumpingGiraffeHighScore", 0);
 		highScore.text = "High Score: " + score.ToString();
 	}

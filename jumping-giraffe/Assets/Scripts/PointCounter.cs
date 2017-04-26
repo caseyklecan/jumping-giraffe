@@ -30,7 +30,6 @@ public class PointCounter : MonoBehaviour {
 	void Update () {
 		time += Time.deltaTime;
 		timeInt = (int)time;
-		Debug.Log (getScore ());
 		appleGT.text = "Points: " + timeInt.ToString();
 	}
 
