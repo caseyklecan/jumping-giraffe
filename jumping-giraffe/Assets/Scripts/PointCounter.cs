@@ -66,11 +66,11 @@ public class PointCounter : MonoBehaviour {
 		}
 
 		// achievement logic
-		if (score > 20) { 
+		if (score > 25) { 
 			achievements.SetPinkUnlocked();
 		}
 
-		if (score > 40) { 
+		if (score > 60) { 
 			achievements.SetBlueUnlocked();
 		}
 	}
