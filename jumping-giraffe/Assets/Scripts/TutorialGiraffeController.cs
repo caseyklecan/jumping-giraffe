@@ -6,21 +6,20 @@ using System;
 
 public class TutorialGiraffeController : MonoBehaviour {
 
-	public float transformDist = 1.5f;
+	// TODO add red/green dot logic, then this is good to go
+
+	public float transformDist = 1.3f;
 	public float jumpForce = 6f;
 
 	public AudioClip bounceSound;
     public AudioClip powerUpSound;
 
 	private Animator a;
-
 	private bool invincible = true;
 	private bool dead = false;
 	private Vector3 newPos;
 	private bool active = false;
-
 	private int section = 0;
-//	private bool isFlipping = false;
 
 
 	// Use this for initialization
@@ -38,12 +37,6 @@ public class TutorialGiraffeController : MonoBehaviour {
 	
 		if (!active)
 			return;
-
-//		if (isFlipping) {
-//			Debug.Log ("Rotating 15 on z with rotation: " + -100 * Time.deltaTime);
-//			transform.Rotate (0, 0, -100 * Time.deltaTime);
-//
-//		}
 
 		if (Input.GetKeyDown("space"))
         {
@@ -88,7 +81,7 @@ public class TutorialGiraffeController : MonoBehaviour {
 
     void ReturnTransformDist()
     {
-        transformDist = 1f;
+        transformDist = 1.3f;
     }
 
 	// the jump that the user executes
@@ -100,17 +93,13 @@ public class TutorialGiraffeController : MonoBehaviour {
 	}
 
 	public void Flip() { 
-//		Animator a = GetComponent<Animator> ();
 		a.SetBool ("Flipping", true);
 		transformDist = 3f;
-//		isFlipping = true;
 		Invoke ("StopFlip", 1.5f);
 	}
 
 	public void StopFlip() { 
-		Animator a = GetComponent<Animator> ();
 		a.SetBool ("Flipping", false);
-//		isFlipping = false;
 		transformDist = 1.3f;
 	}
 
@@ -126,7 +115,6 @@ public class TutorialGiraffeController : MonoBehaviour {
 
 	public void FlyOff() { 
 		if (!invincible) {
-			// want to make this smoother
 			a.SetBool ("Dead", true);
 			dead = true;
 			newPos = new Vector3 (transform.position.x, transform.position.y + 10f, transform.position.z);

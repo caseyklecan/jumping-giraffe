@@ -54,6 +54,8 @@ public class PointCounter : MonoBehaviour {
 			PlayerPrefs.SetInt("JumpingGiraffeHighScore", timeInt);
 			PlayerPrefs.Save ();
 		}
+
+		// add achievement logic
 	}
 		
 

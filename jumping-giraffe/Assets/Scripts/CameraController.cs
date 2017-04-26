@@ -5,9 +5,6 @@ using UnityEngine;
 public class CameraController : MonoBehaviour {
 
 	private Transform giraffe;
-	public GiraffeController gf;
-
-	private float timeLeft = 30f;
 
 	void Start () {
 		giraffe = GameObject.Find ("Giraffe").transform;
@@ -19,10 +16,5 @@ public class CameraController : MonoBehaviour {
 		newPos.y = transform.position.y;
 		newPos.z = transform.position.z;
 		transform.position = newPos;
-
-		timeLeft -= Time.deltaTime;
-		if (timeLeft < 0) { 
-			gf.Win ();
-		}
 	}
 }

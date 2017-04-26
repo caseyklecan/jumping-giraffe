@@ -4,9 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class HillController : MonoBehaviour {
-
-//	public Collider2D coll;
-//	public GameObject otherHill1Prefab;
+	
 	public GameObject otherHill2Prefab;
     private float spriteWidth;
 	private float spriteHeight;
@@ -40,14 +38,16 @@ public class HillController : MonoBehaviour {
     // if we're far enough off screen, can move our current hill, change its color/size appropriately
     void Update()
     {
-		if ((transform.position.x + spriteWidth) < (cameraTransform.position.x - 0.75 * spriteWidth))
+		float other2Width = spriteWidth * otherHill2Prefab.gameObject.GetComponent<HillController> ().GetScale ();
+	
+		if ((transform.position.x + spriteWidth) < cameraTransform.position.x - (.5f * (2f * Camera.main.orthographicSize * Camera.main.aspect)))
         {
 			int index = Random.Range (0, colors.Length);
 			spriteRenderer.color = colors [index];
 			currentSize = Random.Range (0, hillSizes.Length);
 			currentHeight = Random.Range (0, hillHeights.Length);
 			Vector3 newPos = transform.position;
-			newPos.x = otherHill2Prefab.transform.position.x + (0.5f * spriteWidth * otherHill2Prefab.gameObject.GetComponent<HillController> ().GetScale ()) + (0.5f * spriteWidth * hillSizes [currentSize]);
+			newPos.x = otherHill2Prefab.transform.position.x + (0.5f * other2Width) + (0.5f * spriteWidth * hillSizes [currentSize]);
 			newPos.y = (-1f * Camera.main.orthographicSize) + ((spriteHeight * hillHeights [currentHeight]) / 2f);
 
 			transform.position = newPos;
@@ -55,6 +55,7 @@ public class HillController : MonoBehaviour {
 			transform.localScale = new Vector3(hillSizes [currentSize], hillHeights[currentHeight], 1.0f);
         }
     }
+		
 
 	float GetScale() { 
 		return hillSizes[currentSize];

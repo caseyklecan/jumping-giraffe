@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Timer : MonoBehaviour {
 
+	public GiraffeController giraffe;
 	public float time;
 	private int timeInt;
 	private Text timerGT;
@@ -12,6 +13,7 @@ public class Timer : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		
 		timerGO = GameObject.Find ("Timer");
 		timerGT = timerGO.GetComponent<Text> ();
 		timerGT.text = "30";
@@ -22,9 +24,12 @@ public class Timer : MonoBehaviour {
 	void Update () {
 		time -= Time.deltaTime;
 		timeInt = (int)time;
-		timerGT.text = "Time: " + timeInt.ToString();
-		if (time < 0) {
-			//timerGO.GetComponent<GiraffeController> ().Win ();
+		if (time >= 0) { 
+			timerGT.text = "Time: " + timeInt.ToString();
 		}
+		if (time <= 0) { 
+			giraffe.Win ();
+		}
+
 	}
 }
