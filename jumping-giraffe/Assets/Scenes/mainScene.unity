@@ -267,6 +267,46 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0304d7834e3694369945a22a586d5eb6, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &295406163
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 295406165}
+  - component: {fileID: 295406164}
+  m_Layer: 0
+  m_Name: AchievementController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &295406164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 295406163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e04c6783783634d4e939093d0a2c0a64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &295406165
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 295406163}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 559.4038, y: 306.40222, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &379803375 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1724376224837368, guid: 0304d7834e3694369945a22a586d5eb6,
@@ -683,6 +723,9 @@ MonoBehaviour:
   jumpForce: 6
   bounceSound: {fileID: 8300000, guid: 43862f4787d4644f7a717d7041ffce76, type: 3}
   powerUpSound: {fileID: 8300000, guid: 743847b0d66c65b4ca82d8718d243520, type: 3}
+  regular: {fileID: 21300000, guid: 5c64c5fd3d933454d8e142d8d28ee8b0, type: 3}
+  pink: {fileID: 21300000, guid: 6bfde16255b684080bf96be52aa8b26c, type: 3}
+  blue: {fileID: 21300000, guid: 3c3be622b409446f5b3e9ffa10af622a, type: 3}
 --- !u!50 &1439342748
 Rigidbody2D:
   serializedVersion: 4
@@ -839,7 +882,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12ba286f219a8452c94b5e8968bb01a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 0
+  achievements: {fileID: 295406164}
 --- !u!1001 &1480052804
 Prefab:
   m_ObjectHideFlags: 0

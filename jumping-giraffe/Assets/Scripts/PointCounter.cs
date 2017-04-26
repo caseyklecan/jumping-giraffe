@@ -4,11 +4,15 @@ using UnityEngine.UI;
 using UnityEngine;
 
 public class PointCounter : MonoBehaviour {
+
+	public AchievementController achievements;
 	private float time;
 	private int timeInt;
-	public int score;
+	private int score;
 	private Text appleGT;
-	GameObject appleGO;
+	private GameObject appleGO;
+
+	private int appleMultiplier = 1;
 
 	// Use this for initialization
 	void Start () {
@@ -36,8 +40,12 @@ public class PointCounter : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.CompareTag("Apple"))
 		{
-			time += 10.0f;
+			time += (10.0f * appleMultiplier);
 		}
+	}
+
+	public void SetMultiplier(int x) { 
+		appleMultiplier = x;
 	}
 
 	public int getScore() {
@@ -55,8 +63,25 @@ public class PointCounter : MonoBehaviour {
 			PlayerPrefs.Save ();
 		}
 
-		// add achievement logic
+		// achievement logic
+		if (score > 50) { 
+			achievements.SetPinkUnlocked();
+		}
+
+		if (score > 75) { 
+			achievements.SetBlueUnlocked();
+		}
 	}
 		
+	public void ClickRegular() { 
+		appleMultiplier = 1;
+	}
 
+	public void ClickPink() { 
+		appleMultiplier = 2;
+	}
+
+	public void ClickBlue() { 
+		appleMultiplier = 1;
+	}
 }

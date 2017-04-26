@@ -6,8 +6,6 @@ using System;
 
 public class TutorialGiraffeController : MonoBehaviour {
 
-	// TODO add red/green dot logic, then this is good to go
-
 	public float transformDist = 1.3f;
 	public float jumpForce = 6f;
 

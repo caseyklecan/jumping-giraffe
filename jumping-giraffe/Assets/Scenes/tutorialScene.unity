@@ -562,7 +562,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 130, y: 75}
+  m_AnchoredPosition: {x: 130, y: 0}
   m_SizeDelta: {x: 222, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1225698515
@@ -755,6 +755,8 @@ MonoBehaviour:
   jumpForce: 6
   bounceSound: {fileID: 8300000, guid: 43862f4787d4644f7a717d7041ffce76, type: 3}
   powerUpSound: {fileID: 8300000, guid: 743847b0d66c65b4ca82d8718d243520, type: 3}
+  redDot: {fileID: 1402368535911022, guid: 1d9b9149cf3864f6889fb8e044df0087, type: 2}
+  greenDot: {fileID: 1401712520854364, guid: d5213892705014b2faee8fe4c2a6cb64, type: 2}
 --- !u!50 &1439342748
 Rigidbody2D:
   serializedVersion: 4
