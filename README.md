@@ -34,6 +34,8 @@ http://d3lcw15dvjhkjt.cloudfront.net/extensions/labs/sites/bbhmm/images/powerup-
 Apple Image
 http://pngimg.com/img/fruits/apple
 
+Code from the CreateApple() function, CreateSpeedPowerUp() function, and CreateInvincibilityPowerUp() taken from the Apple Picker project
+
 ### Who do I talk to? ###
 
 * Repo owner or admin
