@@ -22,6 +22,9 @@ This README would normally document whatever steps are necessary to get your app
 Bounce Sound
 http://soundbible.com/tags-bouncing.html
 
+Power Up Collection Sound
+http://soundbible.com/1636-Power-Up-Ray.html
+
 Giraffe on Pogo Stick Image
 http://orig11.deviantart.net/7137/f/2008/209/7/e/7edad9b8d0205009d8e9997569b4c59b.png
 
@@ -35,6 +38,7 @@ Apple Image
 http://pngimg.com/img/fruits/apple
 
 Code from the CreateApple() function, CreateSpeedPowerUp() function, and CreateInvincibilityPowerUp() taken from the Apple Picker project
+Some of the code from the High Score and PlayerPrefs was taken from the Apple Picker game
 
 ### Who do I talk to? ###
 
