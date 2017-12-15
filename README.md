@@ -1,40 +1,9 @@
-# README #
+# Jumping Giraffe
 
-This README would normally document whatever steps are necessary to get your application up and running.
+Welcome! Jumping Giraffe is an infinite runner-style mobile game created with Unity. Keep up with the bigger, faster giraffes by hopping along the hills with your pogo stick. If you can go for 30 seconds, you catch up with them! Otherwise, you bounce off course and lose them. Pickup points and speedups, unlock achievements, work on your high score, or play the tutorial level for a little extra fun.
 
-### What is this repository for? ###
+![](home.png)
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+![](gameplay.png)
 
-### How do I get set up? ###
-
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
-
-### Contribution guidelines ###
-
-Bounce Sound
-http://soundbible.com/tags-bouncing.html
-
-Giraffe on Pogo Stick Image
-http://orig11.deviantart.net/7137/f/2008/209/7/e/7edad9b8d0205009d8e9997569b4c59b.png
-
-Invincibility Icon Image
-http://vignette1.wikia.nocookie.net/fantendo/images/7/77/Super_Star_NSMB.png/revision/latest?cb=20120903210307
-
-Speed Icon Image
-http://d3lcw15dvjhkjt.cloudfront.net/extensions/labs/sites/bbhmm/images/powerup-2.png
-
-Apple Image
-http://pngimg.com/img/fruits/apple
-
-### Who do I talk to? ###
-
-* Repo owner or admin
-* Other community or team contact
+Created by: Casey Klecan and Alexandria Mar
